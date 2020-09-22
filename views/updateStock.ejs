@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <div class="container">
+           <h1>Edit Stocks</h1>
+        <form action="/stocks/update/<%= data.id %>" method="POST">
+            <div class="FormAdd">
+                <label for="sku">SKU Product :</label>
+                <input type="number" name="sku" id="sku" class="input" value="<%= data.sku %>">
+            </div>
+    
+            <div class="FormAdd">
+               
+                <label for="products_name">Products_name</label>:</label>
+                <input type="text" name="products_name" id="products_name" class="input" value="<%= data.products_name%>">
+            </div>
+    
+            <div class="FormAdd">
+                <label for="quantity">Quantity :</label>
+                <input type="number" name="quantity" id="quantity" class="input" value="<%= data.quantity%>">
+            </div>
+            <div class="FormAdd">
+                <label for="category">Cathegory</label>
+               <select name="category" class="input" >
+                 <option >Plist Select</option>
+                   <option name "category" value="drinks" <%= (data.category === 'drinks') ? "Selected" : "" %> >Drinks</option>
+                   <option name "category" value="foods" <%= (data.category === 'foods') ? "Selected" : "" %> >Foods</option>
+                   <option name "category" value="others" <%= (data.category === 'others') ? "Selected" : "" %> >others</option>
+               </select>
+            </div>
+            <div class="FormAdd">
+                <label for="price"> Price :</label>
+                <input type="number" name="price" id="number" class="input" value="<%= data.price %>">
+            </div>
+            <div class="FormAdd">
+            
+               <input type="submit">
+    
+              
+            </div class="FormAdd">
+        </form>
+    </div>
+</body>
+</html>

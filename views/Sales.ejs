@@ -1,0 +1,81 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sales.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="head">
+        <h1>Items List</h1>
+    </div>
+
+    <div class="scroll-table">
+        <table class="table table-alt">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>SKU</th>
+                    <th>product_name</th>
+                    <th>quantity</th>
+                    <th>category</th>
+                    <th>price</th>
+                    <th>Buy</th>
+                    
+                </tr>
+            </thead>
+            <% data.map(el => { %>
+            <tbody>
+                <tr> 
+                    <td><%= el.id %></td>
+                    <td><%= el.sku %></td>
+                    <td><%= el.products_name %></td>
+                    <td><%= el.quantity %></td>
+                    <td><%= el.category %></td>
+                    <td>Rp.<%= el.price %></td>
+                    <td class="update-del"><a href="/sales/?input=<%= el.id%>">Add_Chart</a></td>      
+                </tr>
+            </tbody>
+                <% }) %>
+        </table>
+    </div>
+
+    <div class="purchase">
+        <h1>Purchase Items</h1>
+    </div>
+    <div class="scroll-sales">
+        <table class="table table-alt">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>items</th>
+                    <th>Qty</th>
+                    <th>category</th>
+                    <th>price</th>
+                    <th>Total</th>
+                    
+                </tr>
+            </thead>
+                <% sales.map(elm => {%>
+            <tbody>
+                <tr> 
+                    <td><%= elm.id %> </td>
+                    <td><%= elm.products_name %> </td>
+                    <td class="input"> 
+                         <input type="number" max=10 name=quantity> 
+                    </td>
+                    <td><%= elm.category %></td>
+                    <td><%= elm.price %> </td>
+                    <td></td>       
+                </tr>      
+            </tbody>
+            <%  })  %>
+        </table>
+    </div>
+
+</body>
+</html>
+</body>
+</html>
